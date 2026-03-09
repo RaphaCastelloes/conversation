@@ -1,0 +1,88 @@
+{
+  "metadata": {
+    "generated": "2026-03-09T20:03:49.786737",
+    "file": "SKILL.md",
+    "constitution": ".specify\\memory\\constitution.md",
+    "version": "1.0.0"
+  },
+  "summary": {
+    "total_checks": 5,
+    "passed": 3,
+    "failed": 0,
+    "warnings": 2,
+    "status": "WARNING"
+  },
+  "path_validation": {
+    "total": 2,
+    "valid": 0,
+    "external": 2,
+    "broken": 0,
+    "results": [
+      {
+        "path": "/home/opc/.openclaw/workspace/skills/path-cleaner/scripts/clean_media_path.py",
+        "type": "external",
+        "exists": null,
+        "status": "WARNING",
+        "line": 23,
+        "message": "External dependency - not validated"
+      },
+      {
+        "path": "/home/opc/.openclaw/workspace/skills/mp3-to-ogg/scripts/convert_mp3_to_ogg.py",
+        "type": "external",
+        "exists": null,
+        "status": "WARNING",
+        "line": 27,
+        "message": "External dependency - not validated"
+      }
+    ]
+  },
+  "code_validation": {
+    "total": 0,
+    "valid": 0,
+    "errors": 0,
+    "results": []
+  },
+  "constitution_alignment": {
+    "principles": [
+      {
+        "name": "Single Responsibility",
+        "status": "PASS",
+        "found_keywords": [
+          "TTS",
+          "WhatsApp",
+          "audio"
+        ],
+        "missing_keywords": [],
+        "details": "All required keywords found: TTS, WhatsApp, audio"
+      },
+      {
+        "name": "Format Compatibility",
+        "status": "PASS",
+        "found_keywords": [
+          "OGG",
+          "Opus"
+        ],
+        "missing_keywords": [],
+        "details": "All required keywords found: OGG, Opus"
+      },
+      {
+        "name": "Dependency Transparency",
+        "status": "PASS",
+        "found_keywords": [
+          "mp3-to-ogg",
+          "path-cleaner",
+          "tts",
+          "message"
+        ],
+        "missing_keywords": [],
+        "details": "All required keywords found: mp3-to-ogg, path-cleaner, tts, message"
+      }
+    ]
+  },
+  "recommendations": [
+    "Add prerequisites section documenting required tools and dependencies",
+    "Add error handling examples for failed conversions",
+    "Add troubleshooting section for common issues"
+  ],
+  "exit_code": 0
+}
