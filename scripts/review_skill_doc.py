@@ -212,7 +212,8 @@ def extract_sections(content: str) -> List[DocumentSection]:
 
 
 def extract_code_blocks(content: str) -> List[CodeBlock]:
-    """Extract code blocks with language detection."""
+    """Extract code blocks with language detection, including indented ones."""
+    import textwrap
     code_blocks = []
     lines = content.split('\n')
     in_code_block = False
@@ -221,18 +222,23 @@ def extract_code_blocks(content: str) -> List[CodeBlock]:
     start_line = 0
     
     for i, line in enumerate(lines, 1):
-        if line.startswith('```'):
+        stripped_line = line.lstrip()
+        if stripped_line.startswith('```'):
             if not in_code_block:
                 in_code_block = True
                 start_line = i
-                lang_match = re.match(r'```(\w+)?', line)
+                lang_match = re.match(r'```(\w+)?', stripped_line)
                 current_language = lang_match.group(1) if lang_match and lang_match.group(1) else None
                 current_code = []
             else:
                 in_code_block = False
+                # Dedent the code block content
+                code_content = '\n'.join(current_code)
+                dedented_code = textwrap.dedent(code_content)
+                
                 code_blocks.append(CodeBlock(
                     language=current_language,
-                    content='\n'.join(current_code),
+                    content=dedented_code,
                     line_number=start_line
                 ))
                 current_language = None
