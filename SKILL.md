@@ -25,7 +25,7 @@ When a request to send TTS audio to WhatsApp is received, the agent should follo
     ogg_path = tts_response["tts_response"]["output"]
     ```
 
-2.  **Send the OGG audio to WhatsApp:** Clean the MEDIA: prefix from the OGG path using `path-cleaner`, then use the `message` tool with the cleaned path and the recipient's number (obtained from `USER.md`).
+2.  **Send the OGG audio to WhatsApp:** Clean the MEDIA: prefix from the OGG path using `path-cleaner`, then use the `exec` tool to run the `openclaw message send` command with the cleaned path and the recipient's number (obtained from `USER.md`).
     ```python
     # Clean the MEDIA: prefix from the OGG path
     clean_ogg_path = default_api.exec(command = "python /home/opc/.openclaw/workspace/skills/path-cleaner/scripts/clean_media_path.py " + ogg_path)
@@ -33,7 +33,7 @@ When a request to send TTS audio to WhatsApp is received, the agent should follo
     
     # Send to WhatsApp
     user_number = "+553288314794" # Replace with the actual number from USER.md
-    default_api.message(action = "send", channel = "whatsapp", media = clean_ogg_path, message = "<original_message>", to = user_number)
+    default_api.exec(command = f'openclaw message send --channel whatsapp --target "{user_number}" --media "{clean_ogg_path}" --message "<original_message>"')
     ```
 
-The final result will be sending an OGG (Opus) audio compatible with WhatsApp containing the provided text message. The TTS tool outputs OGG format directly, eliminating the need for MP3 to OGG conversion.
+The final result will be sending an OGG (Opus) audio compatible with WhatsApp containing the provided text message. The TTS tool outputs OGG (Opus) format directly.

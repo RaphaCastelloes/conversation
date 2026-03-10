@@ -21,5 +21,5 @@ When processing audio:
     ```python
     # Clean the path and send
     clean_path = api.exec(command="python /path/to/cleaner.py " + output)
-    api.message(action="send", channel="whatsapp", media=clean_path, to="+1234567890")
+    api.exec(command=f'openclaw message send --channel whatsapp --target "+1234567890" --media "{clean_path}" --message "hello"')
     ```
