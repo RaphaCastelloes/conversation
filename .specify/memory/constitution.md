@@ -20,7 +20,7 @@ All audio sent to WhatsApp MUST be in OGG format with Opus codec. The skill MUST
 **Rationale**: WhatsApp strictly requires OGG/Opus for audio messages. Silent failures or format mismatches create poor user experience and debugging nightmares.
 
 ### III. Dependency Transparency
-The skill explicitly declares its dependencies on external skills (`mp3-to-ogg`, `path-cleaner`) and APIs (`tts`, `message`). The SKILL.md documentation MUST maintain up-to-date workflow steps showing exact command sequences and expected outputs.
+The skill explicitly declares its dependencies on external skills (`path-cleaner`) and APIs (`tts`, `message`). The SKILL.md documentation MUST maintain up-to-date workflow steps showing exact command sequences and expected outputs.
 
 **Rationale**: LLM agents need clear execution paths. Transparent dependencies enable agents to diagnose failures, verify prerequisites, and compose skills reliably.
 

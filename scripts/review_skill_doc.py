@@ -471,7 +471,7 @@ def load_constitution_principles() -> List[ConstitutionPrinciple]:
         ),
         ConstitutionPrinciple(
             name="Dependency Transparency",
-            required_keywords=["mp3-to-ogg", "path-cleaner", "tts", "message"]
+            required_keywords=["path-cleaner", "tts", "message"]
         )
     ]
 
