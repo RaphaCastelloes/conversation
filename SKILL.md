@@ -7,6 +7,14 @@ description: Sends text-to-speech (TTS) audio to WhatsApp, ensuring compatibilit
 
 This skill automates the process of sending text-generated audio messages to the user's WhatsApp, ensuring the format is compatible (OGG with Opus codec).
 
+## When to Use
+
+Use this skill when:
+- When the user send an audio message
+- The user explicitly asks to send a TTS audio message to WhatsApp
+- The user sends a text message that needs to be converted to audio and sent via WhatsApp
+- You need to send any text-generated audio to the user's WhatsApp
+
 ## Agent Workflow
 
 When a request to send TTS audio to WhatsApp is received, the agent should follow these steps:
