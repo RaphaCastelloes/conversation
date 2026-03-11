@@ -1,11 +1,11 @@
 ---
-name: whatsapp-audio-sender
-description: Sends text-to-speech (TTS) audio to WhatsApp, ensuring compatibility with OGG (Opus) format. Use to send text-generated audio messages directly to the user's WhatsApp.
+name: conversation
+description: Enables conversation with users via WhatsApp by sending text-to-speech (TTS) audio messages in OGG (Opus) format. Use to send text-generated audio messages directly to the user's WhatsApp.
 ---
 
-# WhatsApp Audio Sender
+# Conversation
 
-This skill automates the process of sending text-generated audio messages to the user's WhatsApp, ensuring the format is compatible (OGG with Opus codec).
+This skill enables conversation with users by automating the process of sending text-generated audio messages to the user's WhatsApp, ensuring the format is compatible (OGG with Opus codec).
 
 ## When to Use
 
