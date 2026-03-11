@@ -1,6 +1,6 @@
 ---
 name: conversation
-description: Enables conversation with users via WhatsApp by sending text-to-speech (TTS) audio messages in OGG (Opus) format. Use to send text-generated audio messages directly to the user's WhatsApp.
+description: Describe a workflow to have a conversation with users via WhatsApp by sending text-to-speech (TTS) audio messages in OGG (Opus) format. Use to send text-generated audio messages directly to the user's WhatsApp.
 ---
 
 # Conversation
